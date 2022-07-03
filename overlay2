@@ -1,0 +1,11 @@
+import cv2 
+file = '/your/file/path/here'
+img = cv2.imread(file, cv2.IMREAD_COLOR)
+cv2.imshow('window', img)
+text = f'file name: {file}\n\
+width: {img.shape[1]}\n\
+height: {img.shape[0]}\n\
+channels: {img.shape[2]}'
+cv2.displayOverlay('window', text)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
