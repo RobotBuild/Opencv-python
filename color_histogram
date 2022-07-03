@@ -1,7 +1,7 @@
 # Color histogram
 from matplotlib import pyplot as plt
 import cv2 as cv
-img = cv.imread('/media/luke/USB/programming/OpenCV_stuff/Textbook_Examples/lego2.png')
+img = cv.imread('/your/file/path/here')
 chans = cv.split(img)
 colors = 'b', 'g', 'r'
 plt.figure()
