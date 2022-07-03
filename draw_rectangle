@@ -1,0 +1,22 @@
+import cv2
+import numpy
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+RED = (0, 0, 255)
+GREEN = (0, 255, 0)
+BLUE = (255, 0, 0)
+CYAN = (255, 255, 0)
+MAGENTA = (255, 0, 255)
+YELLOW = (0, 255, 255)
+
+p0 = 100,10
+p1 = 200,90
+p2 = 300,20
+p3 = 450,80
+
+img = img = numpy.zeros((100, 500, 3), numpy.uint8)
+cv2.rectangle(img, p0, p1, BLUE, 2)
+cv2.rectangle(img, p2, p3, GREEN, cv2.FILLED)
+cv2.imshow('RGB', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
