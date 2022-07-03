@@ -1,0 +1,18 @@
+import cv2 
+import numpy 
+def rgb(x):
+    """Trackbar callback function."""
+    r = cv2.getTrackbarPos('red','window')
+    g = cv2.getTrackbarPos('green','window')
+    b = cv2.getTrackbarPos('blue','window')
+    img[:] = [b, g, r]
+    cv2.displayOverlay('window', f'Red={r}, Green={g}, Blue={b}')
+    cv2.imshow('window', img)
+img = numpy.zeros((100, 600, 3), 'uint8')
+cv2.imshow('window', img)
+cv2.createTrackbar('red', 'window', 200, 255, rgb)
+cv2.createTrackbar('green', 'window', 50, 255, rgb)
+cv2.createTrackbar('blue', 'window', 100, 255, rgb)
+rgb(0)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
