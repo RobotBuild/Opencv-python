@@ -5,7 +5,7 @@ def trackbar(x):
     blurred = cv.blur(img, (x, y))
     cv.imshow('window', blurred)
     cv.displayOverlay('window', f'blur = ({x}, {y})')
-img = cv.imread('/media/luke/USB/programming/OpenCV_stuff/Textbook_Examples/lego2.png')
+img = cv.imread('/your/file/path/here')
 cv.imshow('window', img)
 cv.createTrackbar('blur x', 'window', 0, 4, trackbar)
 cv.createTrackbar('blur y', 'window', 0, 4, trackbar)
