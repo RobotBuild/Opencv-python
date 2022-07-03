@@ -1,0 +1,10 @@
+import cv2 
+def mouse(event, x, y, flags, param):
+    """Mouse callback function."""
+    text = f'mouse at ({x}, {y}), flags={flags}, param={param}'
+    cv2.displayOverlay('window', 'Overlay: ' + text, 1000)
+img = cv2.imread('/media/luke/USB/programming/OpenCV_stuff/city.jpg')
+cv2.imshow('window', img)
+cv2.setMouseCallback('window', mouse)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
