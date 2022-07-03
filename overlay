@@ -1,0 +1,7 @@
+import cv2 
+file = '/your/file/path/here'
+img = cv2.imread(file, cv2.IMREAD_COLOR)
+cv2.imshow('window', img)
+cv2.displayOverlay('window', f'file name: {file}')
+cv2.waitKey(0)
+cv2.destroyAllWindows()
