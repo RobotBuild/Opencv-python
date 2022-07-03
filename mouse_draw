@@ -1,0 +1,12 @@
+import cv2 
+def mouse(event, x, y, flags, param):
+    text = f'Mouse at ({x}, {y}), flags={flags}, param={param}'
+    cv2.displayOverlay('window', text, 1000)
+    if flags == 1:
+        img[y, x] = [0, 0, 255]
+    cv2.imshow('window', img)
+img = cv2.imread('/your/file/path/here')
+cv2.imshow('window', img)
+cv2.setMouseCallback('window', mouse)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
