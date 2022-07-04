@@ -1,0 +1,8 @@
+import cv2
+img = cv2.imread('/your/file/path/here')
+img[250:300, 50:550] = (0, 255, 0)
+face = img[80:230, 270:390]
+img[0:150, 0:120] = face
+cv2.imshow('window', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
