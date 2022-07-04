@@ -1,0 +1,9 @@
+# have to right click and zoom in by 30
+import cv2 
+import numpy 
+img = img = numpy.zeros((100, 500, 3), numpy.uint8)
+cv2.imshow('RGB', img)
+gray_img = numpy.zeros((100, 500), numpy.uint8)
+cv2.imshow('Gray', gray_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
