@@ -1,0 +1,23 @@
+import cv2
+import numpy
+RED = (0, 0, 255)
+GREEN = (0, 255, 0)
+BLUE = (255, 0, 0)
+CYAN = (255, 255, 0)
+MAGENTA = (255, 0, 255)
+YELLOW = (0, 255, 255)
+WHITE = (255, 255, 255)
+colors = (RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE)
+p0, p1 = (100, 30), (400, 90)
+def trackbar(x):
+    color = colors[x]
+    cv2.displayOverlay('window', f'color={color}')
+    img[:] = 0
+    cv2.line(img, p0, p1, color, 10)
+    cv2.imshow('window', img)
+img = numpy.zeros((100, 500, 3), numpy.uint8)
+cv2.line(img, p0, p1, RED, 10)
+cv2.imshow('window', img)
+cv2.createTrackbar('color', 'window', 0, 6, trackbar)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
