@@ -1,0 +1,16 @@
+import cv2 
+import numpy 
+RED = (0, 0, 255)
+p0, p1 = (100, 30), (400, 90)
+def trackbar(x):
+    x = max(1, x)
+    cv2.displayOverlay('window', f'thickness={x}')
+    img[:] = 0
+    cv2.line(img, p0, p1, RED, x)
+    cv2.imshow('window', img)
+img = numpy.zeros((100, 500, 3), numpy.uint8)
+cv2.line(img, p0, p1, RED, 2)
+cv2.imshow('window', img)
+cv2.createTrackbar('thickness', 'window', 2, 20, trackbar)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
