@@ -1,0 +1,36 @@
+import cv2 as cv
+import numpy as np
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+
+RED = (0, 0, 255)
+BLUE = (255, 0, 0)
+GREEN = (0, 255, 0)
+
+CYAN = (255, 255, 0)
+MAGENTA = (255, 0, 255)
+YELLOW = (0, 255, 255)
+
+p0 = (350, 10)
+p1 = (450, 90)
+p2 = (50, 10)
+p3 = (150, 90)
+
+# Adjust the values of the boundry to see if box crosses the line.
+# If it does, you can have the servos adjust for x amount in the X,Y directions.
+boundry = (160, 100) 
+
+img = img = np.zeros((100, 500, 3), np.uint8)
+cv.rectangle(img, p0, p1, BLUE, 2)
+cv.rectangle(img, p2, p3, BLUE, 2)
+
+cv.imshow('RGB', img)
+
+if p3 >= boundry:
+    print('True')
+else:
+    print('False')
+
+cv.waitKey(0)
+cv.destroyAllWindows()
