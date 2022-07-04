@@ -1,0 +1,11 @@
+import cv2 
+def trackbar(x):
+    """Trackbar callback function."""
+    text = f'Trackbar: {x}'
+    cv2.displayOverlay('window', text, 1000)
+    cv2.imshow('window', img)
+img = cv2.imread('/your/file/path/here')
+cv2.imshow('window', img)
+cv2.createTrackbar('x', 'window', 100, 255, trackbar)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
